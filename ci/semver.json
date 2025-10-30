@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "service": "porkbun-mcp-server",
+  "build_date": "2025-10-29",
+  "description": "Porkbun Domain & DNS Management MCP Server",
+  "transport": "streamable-http",
+  "tools": 27
+}
