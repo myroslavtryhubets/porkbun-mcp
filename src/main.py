@@ -10,7 +10,7 @@ import logging
 import os
 from typing import Dict, Any, Optional, List
 
-from fastapi import FastAPI, HTTPException, APIRouter
+from fastapi import FastAPI, HTTPException, APIRouter, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi_mcp import FastApiMCP
 import uvicorn
@@ -117,8 +117,8 @@ async def porkbun_get_pricing() -> Dict[str, Any]:
 
 @router.post("/domain/update-nameservers", operation_id="porkbun_update_nameservers")
 async def porkbun_update_nameservers(
-    domain: str,
-    nameservers: List[str]
+    domain: str = Body(...),
+    nameservers: List[str] = Body(...)
 ) -> Dict[str, Any]:
     """
     Update the name servers for a domain.
